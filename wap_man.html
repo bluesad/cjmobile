@@ -20,7 +20,7 @@
         <meta name="msapplication-TileColor" content="#222222">
 		
 		<meta name = "format-detection" content = "telephone=no">
-
+        <meta http-equiv="x-dns-prefetch-control" content="off">
 
  
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,8 +32,8 @@
         -->
 
         <link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/jquery.mobile-1.4.1.min.css">
-		<link rel="stylesheet" href="css/jquery-mobile-fluid960.min.css">
+	    <link rel="stylesheet" href="css/jquery.mobile-1.4.1.min.css">
+        <link rel="stylesheet" href="css/jquery-mobile-fluid960.min.css">
         <link rel="stylesheet" href="css/main.css">
 	
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -336,21 +336,21 @@
 		<div data-role="page" data-url="" class="ui-page ui-body-c ui-page-active">
 			<div class="sidebar" id="sidebar">
 				<div class="menu">
-					<a href="#">
+					<a href="wap_yuan.html">
 						<i class="icon icon1"></i>医院简介
 					</a>
-<a href="#">
+<a href="wap_news.html">
 						<i class="icon icon2"></i>新闻动态</a>
 						
-<a href="#">
+<a href="wap_doctor.html">
 						<i class="icon icon3"></i>孕育专家</a>
-<a href="#">
+<a href="wap_jishu.html">
 						<i class="icon icon4"></i>孕育技术</a>
-<a href="#">
+<a href="wap_woman.html">
 						<i class="icon icon5"></i>女性不孕</a>
-<a href="#">
+<a href="wap_man.html">
 						<i class="icon icon6"></i>男性不育</a>
-<a href="#">
+<a href="wap_lie.html">
 						<i class="icon icon7"></i>成功案例</a>	
 					<span class="menu_close"></span>
 				</div>
@@ -426,7 +426,11 @@
         <script src="js/vendor/zepto.min.js"></script>
 		<script src="js/vendor/jquery-1.11.0.min.js"></script>
         <script src="js/helper.js"></script>
-		
+        <script>
+        $(document).bind("mobileinit", function() {
+            $.mobile.ajaxEnabled=false
+        });
+        </script>
 		<script src="js/jquery.mobile-1.4.1.min.js"></script>
 		<script src="js/hammer.min.js"></script>
         <script>
@@ -440,12 +444,12 @@
 				});
 					
 
-				var element = document.getElementById('icon-arrow-sidebar');
-				var hammertime = Hammer(element).on("tap", function(event) {
+				var element = $('.icon-arrow-sidebar').parent();
+				var hammertime = Hammer(element[0]).on("tap", function(event) {
 					$('.ui-page').addClass('nav-showing');
 				});
 				
-				var sidebar = document.getElementById('sidebar');
+				var sidebar = $('.sidebar')[0];
 				Hammer(sidebar).on("swipeleft", function(event) {
 					$('.ui-page').removeClass('nav-showing');
 				});
