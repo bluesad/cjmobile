@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+		
+		<meta name = "format-detection" content = "telephone=no">
+
+
+ 
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+
+		<!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.1.min.css">
+		<link rel="stylesheet" href="css/jquery-mobile-fluid960.min.css">
+        <link rel="stylesheet" href="css/main.css">
+	
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<style>
+			*,html,body,div,p{
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing:antialiased;
+				-webkit-overflow-scrolling: touch;
+			}
+			.ui-content{
+				padding:5px;
+			}
+			.header{
+				height:30px;line-height:30px;background-color:#5496b1;
+				background-image:url(img/contact.png);
+				background-repeat:no-repeat;
+				background-position:right 3px top 5px;
+			}
+			.icon{
+				display:inline-block;
+			}
+			.icon-arrow-sidebar{
+				width:20px;
+				height:22px;
+				background:url(img/sidebar_arrow.png) no-repeat;
+			}
+			.header a{
+				float: left;
+				margin-left: 10px;
+				margin-top: 5px;
+				margin-right: 10px;
+			}
+			.header .page-title{
+				font-size:14px;
+				color:white;
+				text-shadow:none;
+				font-family:'微软雅黑';
+			}
+			
+			.news_title{
+				margin:0 auto;
+				padding:0;
+				text-align:center;
+				font-size:14px;
+				color:#5a5a5a;
+			}
+			
+			.ui-toolbar{
+				height:39px;
+				text-align:center;
+				margin-top:10px;
+				margin-bottom:10px;
+			}
+			.ui-toolbar > a{
+				display:inline-block;
+				height:39px;
+				background-image:url(img/toolbar.png);
+				background-repeat:no-repeat;
+			}
+			.ui-toolbar > a:nth-of-type(1){
+				width:77px;
+			}
+			.ui-toolbar > a:nth-of-type(2){
+				width:77px;
+				background-position:-77px;
+			}
+			.ui-toolbar > a:nth-of-type(3){
+				width:77px;
+				background-position:-154px;
+			}
+			.ui-toolbar > a:nth-of-type(4){
+				width:77px;
+				background-position:-231px;
+			}
+			.ui-footer{
+				height:55px;	
+				line-height: 25px;				
+				text-align:center;
+				border:0;
+				background-color:#f2f2f2;
+			}
+				.ui-footer > a,
+				.ui-bar-a.ui-footer > a,
+				.ui-footer > a:visited,
+				.ui-footer>p{
+					font-size:12px;
+					font-family:'微软雅黑';
+					text-decoration:none;
+					color:#898989;
+					margin:0;
+				}
+			.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{background:white;}
+			
+			.icon-arrow{
+				display:inline-block;
+				width:16px;
+				height:16px;
+				background:url(img/icon_article_arrow.png) no-repeat;
+			}
+			#news_date,#news_origin{
+				font-size:12px;
+				text-align:center;
+				color:#5a5a5a;				
+			}
+			.news_content,
+			.news_content pre{
+				font-size:12px;
+				line-height:18px;
+				color:#000;
+			}
+			.btn_action{
+				text-align:center;
+			}
+			.btn_action > a{
+				display:inline-block;
+				height:31px;
+				margin:auto;
+				width:110px;
+				text-indent:-999px;
+				font-size:0;
+				background-image:url(img/btn_action.png);
+				background-repeat:no-repeat;
+			}
+			.btn_action a.btn:nth-of-type(2){
+				background-position: -126px 0;
+				margin-left:15px;
+			}
+			.news_section{
+
+				
+				line-height:30px;
+				margin:10px 0;
+			}
+			.news_section h1{
+				background-color: #e6e8e8;
+				padding:0 0 0 10px;
+				margin:0;
+				margin-bottom:10px;
+				
+				font-family:'微软雅黑';
+				font-size:14px;
+				color:#000;
+				font-weight:normal;
+								
+			}
+			.news_section  a{
+				color:#373737;
+				font-weight:normal;
+				text-decoration:none;
+			}
+			figure{
+				background:#f2f2f2;
+				margin-right:10px;
+				overflow:hidden;
+				height:140px;
+			}
+			figure figcaption{
+				font-size:12px;
+				line-height:15px;
+				padding:10px;
+				color:#373737;
+			}
+			figure.nomargin{
+				margin:0;
+			}
+			.article{
+				margin-top:25px;
+			}
+			.article article{
+				border-bottom:1px dashed #797979;
+				line-height:22px;
+			}
+			.article article a.ui-link{
+				font-size:12px;
+				text-decoration:none;
+				color:#797979;
+			}
+			.article article a.ui-link:before{
+				content:'.';
+				font-size:20px;
+				line-height:15px;
+				padding-right:10px;
+				vertical-align:top;
+				display:inline-block;
+			}
+			.article article a.ui-link i{
+				font-size:12px;
+				text-decoration:none;
+				color:#5496b1;
+				float:right;
+			}
+			
+		</style>
+		<style>
+			.sidebar{
+				width:125px;
+				-webkit-transition:all .4s ease-in-out;
+				transition:all .4s ease-in-out;
+			}
+			.ui-page .sidebar{
+				left:-125px;
+				top:0;
+				z-index:5;
+				position:absolute;
+			}
+			.ui-page.nav-showing .sidebar{
+				left:0;
+			}
+			.menu{
+				border:2px solid #55cdfe;
+				background: #d1f2ff; 
+				background: -moz-linear-gradient(left,  #d1f2ff 0%, #dbf5ff 32%, #e4f7ff 69%, #e3f7ff 100%); 
+				background: -webkit-gradient(linear, left top, right top, color-stop(0%,#d1f2ff), color-stop(32%,#dbf5ff), color-stop(69%,#e4f7ff), color-stop(100%,#e3f7ff));
+				background: -webkit-linear-gradient(left,  #d1f2ff 0%,#dbf5ff 32%,#e4f7ff 69%,#e3f7ff 100%); 
+				background: -o-linear-gradient(left,  #d1f2ff 0%,#dbf5ff 32%,#e4f7ff 69%,#e3f7ff 100%); 
+				background: -ms-linear-gradient(left,  #d1f2ff 0%,#dbf5ff 32%,#e4f7ff 69%,#e3f7ff 100%);
+				background: linear-gradient(to right,  #d1f2ff 0%,#dbf5ff 32%,#e4f7ff 69%,#e3f7ff 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1f2ff', endColorstr='#e3f7ff',GradientType=1 ); 
+
+				box-sizing:border-box;
+				padding:2px;
+				border-radius:5px;
+				width:124px;
+				height:363px;
+			}
+			.menu > a{
+				display:block;
+				height:44px;
+				line-height:44px;
+				border-bottom:1px solid #c5eeff;
+				box-shadow:0 1px 0 #fff;
+				text-decoration:none;
+				color:#3b3b3b;
+				font-size:14px;
+				font-family:'微软雅黑';
+				text-shadow:0px 1px 0 #fff;
+			}
+			.menu .icon{
+				width:23px;
+				height:24px;
+				margin-top: 12px;
+				margin-left:5px;
+				margin-right:10px;
+				float: left;
+				background-image:url(img/menu_icons.png);
+				background-repeat:no-repeat;
+			}
+			.menu .icon1{
+				background-position:0 0;
+				margin-top:12px;
+			}
+			.menu .icon2{
+				background-position:0 -45px;				
+			}
+			.menu .icon3{
+				background-position:0 -90px;				
+			}
+			.menu .icon4{
+				background-position:0 -130px;				
+			}
+			.menu .icon5{
+				background-position:0 -175px;				
+			}
+			.menu .icon6{
+				background-position:0 -218px;				
+			}
+			.menu .icon7{
+				background-position:0 -263px;				
+			}
+			.menu .menu_close{
+				display:block;
+				width:35px;
+				height:35px;
+				background:url(img/menu_close.png) no-repeat;
+				float:right;
+				margin-right:10px;
+				margin-top:5px;
+				cursor:pointer;
+			}
+			.ui-page .ui-content{
+				position:relative;
+				overflow-y:auto;
+				width:98%;
+				margin-left:0;
+				-webkit-transition:all .4s ease-in-out;
+				transition:all .4s ease-in-out;
+			}
+			.ui-page.nav-showing .ui-content{
+				overflow:hidden;
+				position:absolute;
+				top:0;
+				left:0;
+				margin-left:125px;
+			}
+			.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page{
+				overflow-x:hidden;
+				position:relative;
+				width:100%;				
+			}
+			
+		</style>
+    </head>
+    <body>
+
+        <!-- Add your site or application content here -->
+		<div data-role="page" data-url="" class="ui-page ui-body-c ui-page-active">
+			<div class="sidebar" id="sidebar">
+				<div class="menu">
+					<a href="#">
+						<i class="icon icon1"></i>医院简介
+					</a>
+<a href="#">
+						<i class="icon icon2"></i>新闻动态</a>
+						
+<a href="#">
+						<i class="icon icon3"></i>孕育专家</a>
+<a href="#">
+						<i class="icon icon4"></i>孕育技术</a>
+<a href="#">
+						<i class="icon icon5"></i>女性不孕</a>
+<a href="#">
+						<i class="icon icon6"></i>男性不育</a>
+<a href="#">
+						<i class="icon icon7"></i>成功案例</a>	
+					<span class="menu_close"></span>
+				</div>
+			</div>
+			<div data-role="content" class="ui-content" role="main">
+				<div class="header">
+					<a href="#"><i class="icon icon-arrow-sidebar"></i></a><span class="page-title">医院简介</span>
+				</div>
+				<div class="clearfix"></div>
+				<div class="container_12">
+					<div class="grid_12">						
+						<h1 class="news_title">上海长江医院简介</h1>
+						
+						<div class="grid_6" id="news_date">
+							时间：<span>2014-01-03</span>    
+						</div>
+						<div class="grid_6" id="news_origin">
+							文章来源：<span>上海长江医院</span>
+						</div>
+						
+						<div class="grid_12 news_content">
+							<pre>我们都知道“南辕北辙”非但达不成目标，反而离目标越来越远，对于看病求医来说更是要不得。但是临床中，很多女性输卵管堵塞患者由于“求子”心切，而盲目治疗，以致进入治疗的误区，造成严重后果。　
+　　1、盲目用药：未找到明显原因的输卵管不通患者，都遭遇毫无作用的消炎药或活血化淤的要物治疗，就比如某个人在某个时期身体的某个部位起了一个疮，疮好后留了一个疮疤，但到这个时期用治疮的方法来治这个疮疤是毫无意义的。
+　　2、盲目就医：输卵管堵塞也可以分很多种类型，不能一概而论，患者要知道具体是什么原因造成的，然后才能对症治疗。一些小地方的医生治疗方法不科学，根本无法治好患者，这样既患者造成了财产损失，又耽误治疗时机，严重的甚至会出现“把聋子治成瞎子”的情况，原来的病没治好，反而治出别的病来了。
+　　3、轻信广告宣传：许多不孕症患者求医心切，较易跟着广告走，一些不规范的诊所，将目前医学上无法解决的疾病说成相对性的引诱患者进行毫无希望的治疗，使患者白白花费大量金钱。
+　　4、与不排卵混为一谈：输卵管是精子和受精卵的通道，只是起到运输的作用。不排卵则是卵巢功能异常，两者要区分开。
+　　温馨提示：通过以上的介绍，相信您对“治疗输卵管堵塞的误区”已有一定的了解。输卵管堵塞是一种对女性影响很大的疾病，所以女性朋友一定要及时治疗，但不要因为疏忽导致误区的出现。如您有不明白的问题或是想进一步了解，您可以咨询在线专家。
+							</pre>
+						</div>
+						
+						
+						<div class="grid_12 btn_action">
+							<a href="#" class="btn">网上预约</a>
+							<a href="#" class="btn">电话咨询</a>
+						</div>
+						
+						<div class="grid_12">
+							<img src="img/share.gif" />
+						</div>
+						<div class="clearfix"></div>
+						<div class="news_section">
+							<h1>[新闻动态]</h1>
+							<div class="grid_6">
+								<a href="#">
+									<figure>
+									  <img src="img/news1.jpg">
+									  <figcaption>中美不孕不育高峰论坛召开众多知名专家媒体参加</figcaption>
+									</figure>
+								</a>
+							</div>
+							<div class="grid_6">
+								<a href="#">
+									<figure class="nomargin">
+									  <img src="img/news2.jpg">
+									  <figcaption>中美不孕不育高峰论坛程怀瑾、黄敏丽主持</figcaption>
+									</figure>
+								</a>
+							</div>
+							
+						</div>
+						
+						<div class="grid_12">
+							<section class="article">
+								<article>
+									<a href="#">女性不孕不育的测试方法有哪些<i>&gt;</i></a>									
+								</article>
+								<article>
+									<a href="#">上海多囊卵巢综合症应该怎么检查<i>&gt;</i></a>
+								</article>
+								<article>
+									<a href="#">要怎么判断男性精子是否异常<i>&gt;</i></a>
+								</article>
+								<article>
+									<a href="#">女性子宫内膜异位症的症状<i>&gt;</i></a>
+								</article>
+								<article>
+									<a href="#">多囊卵巢综合症用什么方法治疗好<i>&gt;</i></a>
+								</article>
+							</section>
+						</div>
+					</div>
+					
+					
+				</div>
+				
+				<div class="ui-toolbar" role="toolbar">
+					<a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a>
+				</div>
+				
+				<div class="ui-bar-a ui-footer">
+					<a href="#">返回首页</a>
+					<a href="#">访问PC版</a>
+					<a href="javascript:scollTo(0,0);">回到顶部</a>
+					<a href="#">联系方式</a>
+					<p>本网站信息仅做健康参考，具体诊疗请遵医师意见</p>
+				</div><!-- /footer -->
+			</div><!-- /content -->
+
+			
+		</div>
+        <script src="js/vendor/zepto.min.js"></script>
+		<script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="js/helper.js"></script>
+		
+		<script src="js/jquery.mobile-1.4.1.min.js"></script>
+		<script src="js/hammer.min.js"></script>
+        <script>
+			$(function(){
+				$('.menu').on('click','.menu_close',function(){
+					$('.ui-page').removeClass('nav-showing');
+				});
+				
+				$('a.ui-link').on('click','.icon-arrow-sidebar',function(){
+					$('.ui-page').addClass('nav-showing');
+				});
+					
+
+				var element = document.getElementById('icon-arrow-sidebar');
+				var hammertime = Hammer(element).on("tap", function(event) {
+					$('.ui-page').addClass('nav-showing');
+				});
+				
+				var sidebar = document.getElementById('sidebar');
+				Hammer(sidebar).on("swipeleft", function(event) {
+					$('.ui-page').removeClass('nav-showing');
+				});
+				
+				Hammer($('.ui-content')[0]).on("swipeleft", function(event) {
+					$('.ui-page').removeClass('nav-showing');
+				});
+				
+				Hammer($('.ui-content')[0]).on("swiperight", function(event) {
+					$('.ui-page').addClass('nav-showing');
+				});
+			});
+		</script>
+        
+    </body>
+</html>

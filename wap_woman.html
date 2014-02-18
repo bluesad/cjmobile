@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+		
+		<meta name = "format-detection" content = "telephone=no">
+
+
+ 
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+
+		<!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.1.min.css">
+		<link rel="stylesheet" href="css/jquery-mobile-fluid960.min.css">
+        <link rel="stylesheet" href="css/main.css">
+	
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<style>
+			*,html,body,div,p{
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing:antialiased;
+				-webkit-overflow-scrolling: touch;
+			}
+			.ui-content{
+				padding:5px;
+			}
+			.header{
+				height:30px;line-height:30px;background-color:#5496b1;
+				background-image:url(img/contact.png);
+				background-repeat:no-repeat;
+				background-position:right 3px top 5px;
+			}
+			.icon{
+				display:inline-block;
+			}
+			.icon-arrow-sidebar{
+				width:20px;
+				height:22px;
+				background:url(img/sidebar_arrow.png) no-repeat;
+			}
+			.header a{
+				float: left;
+				margin-left: 10px;
+				margin-top: 5px;
+				margin-right: 10px;
+			}
+			.header .page-title{
+				font-size:14px;
+				color:white;
+				text-shadow:none;
+				font-family:'微软雅黑';
+			}
+			
+			.ui-toolbar{
+				height:39px;
+				text-align:center;
+				margin-top:10px;
+				margin-bottom:10px;
+			}
+			.ui-toolbar > a{
+				display:inline-block;
+				height:39px;
+				background-image:url(img/toolbar.png);
+				background-repeat:no-repeat;
+			}
+			.ui-toolbar > a:nth-of-type(1){
+				width:77px;
+			}
+			.ui-toolbar > a:nth-of-type(2){
+				width:77px;
+				background-position:-77px;
+			}
+			.ui-toolbar > a:nth-of-type(3){
+				width:77px;
+				background-position:-154px;
+			}
+			.ui-toolbar > a:nth-of-type(4){
+				width:77px;
+				background-position:-231px;
+			}
+			.ui-footer{
+				height:55px;	
+				line-height: 25px;				
+				text-align:center;
+				border:0;
+				background-color:#f2f2f2;
+			}
+				.ui-footer > a,
+				.ui-bar-a.ui-footer > a,
+				.ui-footer > a:visited,
+				.ui-footer>p{
+					font-size:12px;
+					font-family:'微软雅黑';
+					text-decoration:none;
+					color:#898989;
+					margin:0;
+				}
+			.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{background:white;}
+			
+			.icon-arrow{
+				display:inline-block;
+				width:16px;
+				height:16px;
+				background:url(img/icon_article_arrow.png) no-repeat;
+			}
+			.icon-checkbox{
+				display:inline-block;
+				width:13px;
+				height:11px;
+				background:url(img/icon_checkbox.png) no-repeat;
+			}
+			.icon-checkbox-yellow{
+				display:inline-block;
+				width:13px;
+				height:11px;
+				background:url(img/icon_checkbox_yellow.png) no-repeat;
+			}
+			.icon-caret-down{
+				display:inline-block;
+				width:8px;
+				height:6px;
+				background:url(img/icon_caret_down.png) no-repeat;
+			}
+			.metro .grid_6{
+				padding-right:10px;
+				box-sizing:border-box;
+			}
+			.metro .grid_6:nth-child(even){
+				margin:0;
+				box-sizing:border-box;
+			}
+			
+			.metro section{
+				margin-top:10px;
+				padding:5px;
+			}
+			.metro article{
+				font-size:12px;
+				color:#666;
+				text-shadow:none;
+			}		
+			.metro article .title{
+				display:block;
+				font-size:14px;
+				padding-bottom:5px;		
+				font-family:'微软雅黑';
+				color:#2d6000;		
+				border-bottom:1px solid #8acd4d;
+				box-shadow:0 1px 0 #d8feb5;				
+			}
+			.metro .grid_6 section article a{
+				text-decoration:none;
+				font-size:14px;
+				color:#333;		
+				font-family:'微软雅黑';
+				font-weight:normal;
+			}
+			.metro .grid_6:nth-child(1) section:nth-of-type(1){
+				background-color:#a9e276;
+				height:156px;
+			}
+			.metro .grid_6:nth-child(1) section:nth-of-type(2){
+				background-color:#c3feff;
+				height:130px;
+			}
+			.metro .grid_6:nth-child(1) section:nth-of-type(3){
+				background-color:#f5b3b4;
+				height:100px;
+			}
+			.metro .grid_6:nth-child(1) section:nth-of-type(2) article{
+				line-height:43.333333333px;
+				border-bottom:1px solid #86edef;
+				box-shadow:0 1px 0 #ffffff;	
+			}
+			.metro .grid_6:nth-child(1) section:nth-of-type(2) article:last-child{
+				border-bottom:0;
+				box-shadow:none;
+			}
+			.metro .grid_6:nth-child(1) section:nth-of-type(2) article i,
+			.metro .grid_6:nth-child(2) section:nth-of-type(1) article:nth-child(1) i,
+			.metro .grid_6:nth-child(2) section:nth-of-type(3) article i{
+				margin-right:10px;
+			}
+			.metro .grid_6:nth-child(1) section:nth-of-type(3) article{
+				line-height:33.333333333px;			
+				color:#333;
+				font-family:'微软雅黑';
+				font-size:14px;
+				
+			}
+			.metro .grid_6:nth-child(1) section:nth-of-type(3) article a.ui-link i{
+				float:right;
+				color:#b55d5e;
+				cursor:pointer;
+				font-style:normal;
+				margin-right:10px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(1){
+				background-color:#96e3ff;
+				height:188px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(1) article{
+				line-height:31.333333333px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(1) article:not(:nth-child(1)){
+				padding-left:35px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(1) article:nth-child(1){
+				border-bottom:1px solid #5bd3ff;
+				box-shadow:0 1px 0 #beeeff;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(1) article:nth-child(1) a{
+				color:#006b92;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(2){
+				background-color:#f5b3b4;
+				height:58px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(2) article{
+				line-height:29px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(2) article a.ui-link i{
+				float:right;
+				color:#ba6465;
+				cursor:pointer;
+				font-style:normal;
+				margin-right:10px;
+			}
+			
+			.metro .grid_6:nth-child(2) section:nth-of-type(3){
+				background-color:#ffeab2;
+				height:130px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(3) article{
+				line-height:32.5px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(4){
+				background-color:#dcc3ff;
+				height:100px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(4) article{
+				line-height:50px;
+			}
+			.metro .grid_6:nth-child(2) section:nth-of-type(4) article a.ui-link i{
+				float:right;
+				color:#8866b7;
+				cursor:pointer;
+				font-style:normal;
+				margin-right:10px;
+			}
+		</style>
+		<style>
+			.sidebar{
+				width:125px;
+				-webkit-transition:all .4s ease-in-out;
+				transition:all .4s ease-in-out;
+			}
+			.ui-page .sidebar{
+				left:-125px;
+				top:0;
+				z-index:5;
+				position:absolute;
+			}
+			.ui-page.nav-showing .sidebar{
+				left:0;
+			}
+			.menu{
+				border:2px solid #55cdfe;
+				background: #d1f2ff; 
+				background: -moz-linear-gradient(left,  #d1f2ff 0%, #dbf5ff 32%, #e4f7ff 69%, #e3f7ff 100%); 
+				background: -webkit-gradient(linear, left top, right top, color-stop(0%,#d1f2ff), color-stop(32%,#dbf5ff), color-stop(69%,#e4f7ff), color-stop(100%,#e3f7ff));
+				background: -webkit-linear-gradient(left,  #d1f2ff 0%,#dbf5ff 32%,#e4f7ff 69%,#e3f7ff 100%); 
+				background: -o-linear-gradient(left,  #d1f2ff 0%,#dbf5ff 32%,#e4f7ff 69%,#e3f7ff 100%); 
+				background: -ms-linear-gradient(left,  #d1f2ff 0%,#dbf5ff 32%,#e4f7ff 69%,#e3f7ff 100%);
+				background: linear-gradient(to right,  #d1f2ff 0%,#dbf5ff 32%,#e4f7ff 69%,#e3f7ff 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1f2ff', endColorstr='#e3f7ff',GradientType=1 ); 
+
+				box-sizing:border-box;
+				padding:2px;
+				border-radius:5px;
+				width:124px;
+				height:363px;
+			}
+			.menu > a{
+				display:block;
+				height:44px;
+				line-height:44px;
+				border-bottom:1px solid #c5eeff;
+				box-shadow:0 1px 0 #fff;
+				text-decoration:none;
+				color:#3b3b3b;
+				font-size:14px;
+				font-family:'微软雅黑';
+				text-shadow:0px 1px 0 #fff;
+			}
+			.menu .icon{
+				width:23px;
+				height:24px;
+				margin-top: 12px;
+				margin-left:5px;
+				margin-right:10px;
+				float: left;
+				background-image:url(img/menu_icons.png);
+				background-repeat:no-repeat;
+			}
+			.menu .icon1{
+				background-position:0 0;
+				margin-top:12px;
+			}
+			.menu .icon2{
+				background-position:0 -45px;				
+			}
+			.menu .icon3{
+				background-position:0 -90px;				
+			}
+			.menu .icon4{
+				background-position:0 -130px;				
+			}
+			.menu .icon5{
+				background-position:0 -175px;				
+			}
+			.menu .icon6{
+				background-position:0 -218px;				
+			}
+			.menu .icon7{
+				background-position:0 -263px;				
+			}
+			.menu .menu_close{
+				display:block;
+				width:35px;
+				height:35px;
+				background:url(img/menu_close.png) no-repeat;
+				float:right;
+				margin-right:10px;
+				margin-top:5px;
+				cursor:pointer;
+			}
+			.ui-page .ui-content{
+				position:relative;
+				overflow-y:auto;
+				width:98%;
+				margin-left:0;
+				-webkit-transition:all .4s ease-in-out;
+				transition:all .4s ease-in-out;
+			}
+			.ui-page.nav-showing .ui-content{
+				overflow:hidden;
+				position:absolute;
+				top:0;
+				left:0;
+				margin-left:125px;
+			}
+			.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page{
+				overflow-x:hidden;
+				position:relative;
+				width:100%;				
+			}
+			
+		</style>
+    </head>
+    <body>
+
+        <!-- Add your site or application content here -->
+		<div data-role="page" data-url="" class="ui-page ui-body-c ui-page-active">
+			<div class="sidebar" id="sidebar">
+				<div class="menu">
+					<a href="#">
+						<i class="icon icon1"></i>医院简介
+					</a>
+<a href="#">
+						<i class="icon icon2"></i>新闻动态</a>
+						
+<a href="#">
+						<i class="icon icon3"></i>孕育专家</a>
+<a href="#">
+						<i class="icon icon4"></i>孕育技术</a>
+<a href="#">
+						<i class="icon icon5"></i>女性不孕</a>
+<a href="#">
+						<i class="icon icon6"></i>男性不育</a>
+<a href="#">
+						<i class="icon icon7"></i>成功案例</a>	
+					<span class="menu_close"></span>
+				</div>
+			</div>
+			<div data-role="content" class="ui-content" role="main">
+				<div class="header">
+					<a href="#"><i class="icon icon-arrow-sidebar"></i></a><span class="page-title">男性不育</span>
+				</div>
+				<div class="clearfix"></div>
+				<div class="container_12">
+					<div class="grid_12 metro">
+						<div class="grid_6">
+							<img src="img/woman.png">
+							<section class="article">
+								<article>
+									<span class="title">女性不孕</span>
+									<p>育龄夫妇双方同居一年以上，有正常性生活，没有采用任何避孕措施的情况下，未能成功怀孕者称不孕症。</p>
+								</article>								
+							</section>
+							
+							<section class="article">
+								<article>
+									<a href="#"><i class="icon-checkbox"></i>内分泌失调不孕</a>														
+								</article>	
+								<article>									
+									<a href="#"><i class="icon-checkbox"></i>不排卵</a>
+								</article>	
+								<article>									
+									<a href="#"><i class="icon-checkbox"></i>卵泡检测</a>
+								</article>									
+							</section>
+							
+							<section class="article">
+								<article>
+									<a href="#">子宫性不孕<i>&gt;</i></a>								
+								</article>
+								<article>
+									<a href="#">子宫内膜异位症<i>&gt;</i></a>
+								</article>
+								<article>
+									<a href="#">习惯性流产<i>&gt;</i></a>
+								</article>
+							</section>
+						</div>
+						<div class="grid_6">
+							<section class="article">
+								<article>
+									<a href="#"><i class="icon-caret-down"></i>输卵管性不孕</a>														
+								</article>	
+								<article>									
+									<a href="#">输卵管造影</a>
+								</article>	
+								<article>									
+									<a href="#">输卵管堵塞</a>
+								</article>	
+								<article>									
+									<a href="#">输卵管粘连</a>
+								</article>
+								<article>									
+									<a href="#">输卵管积液</a>
+								</article>
+								<article>									
+									<a href="#">输卵管通而不畅</a>
+								</article>
+							</section>
+							
+							<section class="article">
+								<article>
+									<a href="#">多囊卵巢<i>&gt;</i></a>								
+								</article>
+								<article>
+									<a href="#">卵巢囊肿<i>&gt;</i></a>
+								</article>							
+							</section>
+							
+							<section class="article">
+								<article>
+									<a href="#"><i class="icon-checkbox-yellow"></i>不孕不育检查项目</a>														
+								</article>	
+								<article>									
+									<a href="#"><i class="icon-checkbox-yellow"></i>婚后不孕</a>
+								</article>	
+								<article>									
+									<a href="#"><i class="icon-checkbox-yellow"></i>结扎后再孕</a>
+								</article>	
+								<article>									
+									<a href="#"><i class="icon-checkbox-yellow"></i>月经不调</a>
+								</article>								
+							</section>
+							
+							<section class="article">
+								<article>
+									<a href="#">人工授精<i>&gt;</i></a>								
+								</article>
+								<article>
+									<a href="#">试管婴儿<i>&gt;</i></a>
+								</article>								
+							</section>
+						</div>
+					</div>
+				</div>
+				
+				<div class="ui-toolbar" role="toolbar">
+					<a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a>
+				</div>
+				
+				<div class="ui-bar-a ui-footer">
+					<a href="#">返回首页</a>
+					<a href="#">访问PC版</a>
+					<a href="javascript:scollTo(0,0);">回到顶部</a>
+					<a href="#">联系方式</a>
+					<p>本网站信息仅做健康参考，具体诊疗请遵医师意见</p>
+				</div><!-- /footer -->
+			</div><!-- /content -->
+
+			
+		</div>
+        <script src="js/vendor/zepto.min.js"></script>
+		<script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="js/helper.js"></script>
+		
+		<script src="js/jquery.mobile-1.4.1.min.js"></script>
+
+        <script src="js/hammer.min.js"></script>
+        <script>
+			$(function(){
+				$('.menu').on('click','.menu_close',function(){
+					$('.ui-page').removeClass('nav-showing');
+				});
+				
+				$('a.ui-link').on('click','.icon-arrow-sidebar',function(){
+					$('.ui-page').addClass('nav-showing');
+				});
+					
+
+				var element = document.getElementById('icon-arrow-sidebar');
+				var hammertime = Hammer(element).on("tap", function(event) {
+					$('.ui-page').addClass('nav-showing');
+				});
+				
+				var sidebar = document.getElementById('sidebar');
+				Hammer(sidebar).on("swipeleft", function(event) {
+					$('.ui-page').removeClass('nav-showing');
+				});
+				
+				Hammer($('.ui-content')[0]).on("swipeleft", function(event) {
+					$('.ui-page').removeClass('nav-showing');
+				});
+				
+				Hammer($('.ui-content')[0]).on("swiperight", function(event) {
+					$('.ui-page').addClass('nav-showing');
+				});
+			});
+		</script>
+    </body>
+</html>
